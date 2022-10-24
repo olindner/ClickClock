@@ -21,6 +21,19 @@ public class Circle : MonoBehaviour
 
         Instantiate(nextCircle, newCircleLocation, Quaternion.identity);
 
+        DrawLine(transform.position, newCircleLocation);
+
         main.FollowMe = newCameraLocation;
+    }
+
+    void DrawLine(Vector3 current, Vector3 target)
+    {
+        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        
+        var points = new List<Vector3>();
+        points.Add(current);
+        points.Add(target);
+        
+        lineRenderer.SetPositions(points.ToArray());
     }
 }
