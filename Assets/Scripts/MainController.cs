@@ -6,7 +6,7 @@ public class MainController : MonoBehaviour
 {
     public GameObject Circle;
     public Vector3 FollowMe;
-    public float Speed = 3f;
+    public float Speed = 5f;
 
     void Start()
     {

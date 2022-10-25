@@ -254,6 +254,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b8c6016bbf64af399757da69e09d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Circle: {fileID: 4363067645322104798, guid: 6c1aba0f5d96e499aaff273e6f4d3e00, type: 3}
+  FollowMe: {x: 0, y: 0, z: 0}
+  Speed: 1
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
