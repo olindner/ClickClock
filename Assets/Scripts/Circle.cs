@@ -7,16 +7,21 @@ public class Circle : MonoBehaviour
     public GameObject nextCircle;
     public MainController main;
     public int maxNewCircles = 2;
+    public float cameraOffsetY = 2;
+    public float cameraOffsetZ = -10;
+
+    private Color White = new Color(1,1,1);
+    private Color Red = new Color(1,0,0);
 
     void Start()
     {
-        GetComponent<SpriteRenderer>().color = new Color(1,1,1);
+        GetComponent<SpriteRenderer>().color = White;
     }
 
     void OnMouseDown()
     {
         //Move camera here
-        main.FollowMe = new Vector3(transform.position.x, transform.position.y, -10);
+        main.FollowMe = new Vector3(transform.position.x, transform.position.y + cameraOffsetY, cameraOffsetZ);
 
         var newCircleLocations = PickNewPoints();
 
@@ -27,7 +32,7 @@ public class Circle : MonoBehaviour
         }
 
         //After click/cleanup/explosion
-        GetComponent<SpriteRenderer>().color = new Color(1,0,0);
+        GetComponent<SpriteRenderer>().color = Red;
         Destroy(this); //Should just disable script
     }
 
